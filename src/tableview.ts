@@ -55,6 +55,7 @@ export function updateColumnsOnResize(
   overrideCol?: number,
   overrideValue?: number,
 ): void {
+  console.log('updateColumnsOnResize');
   let totalWidth = 0;
   let fixedWidth = true;
   let nextDOM = colgroup.firstChild as HTMLElement;
@@ -72,6 +73,7 @@ export function updateColumnsOnResize(
       if (!nextDOM) {
         const col = document.createElement('col');
         col.style.width = cssWidth;
+        col.style.background = 'green';
         colgroup.appendChild(col);
       } else {
         if (nextDOM.style.width != cssWidth) {
